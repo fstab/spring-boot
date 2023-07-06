@@ -8,6 +8,11 @@ plugins {
 	id "org.springframework.boot.optional-dependencies"
 }
 
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
 description = "Spring Boot Actuator AutoConfigure"
 
 configurations {
@@ -58,6 +63,7 @@ dependencies {
 	optional("io.micrometer:micrometer-registry-new-relic")
 	optional("io.micrometer:micrometer-registry-otlp")
 	optional("io.micrometer:micrometer-registry-prometheus")
+	optional("io.micrometer:micrometer-registry-prometheus_native:latest.integration")
 	optional("io.micrometer:micrometer-registry-stackdriver") {
 		exclude group: "commons-logging", module: "commons-logging"
 		exclude group: "javax.annotation", module: "javax.annotation-api"

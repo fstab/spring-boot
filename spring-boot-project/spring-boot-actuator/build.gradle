@@ -6,6 +6,11 @@ plugins {
 	id "org.springframework.boot.deployed"
 }
 
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
 description = "Spring Boot Actuator"
 
 dependencies {
@@ -25,6 +30,7 @@ dependencies {
 	optional("io.micrometer:micrometer-core")
 	optional("io.micrometer:micrometer-tracing")
 	optional("io.micrometer:micrometer-registry-prometheus")
+	optional("io.micrometer:micrometer-registry-prometheus_native:latest.integration")
 	optional("io.prometheus:simpleclient_pushgateway") {
 		exclude(group: "javax.xml.bind", module: "jaxb-api")
 	}
